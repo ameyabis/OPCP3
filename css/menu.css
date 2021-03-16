@@ -1,0 +1,243 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+}
+.header__content i {
+  margin: 10px;
+  color: #000;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+.header__logo img {
+  width: 150px;
+  margin: 10px 0 10px 0;
+}
+.header figure {
+  margin: 0;
+  height: 200px;
+  display: flex;
+}
+.header figure img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  z-index: 1;
+  margin-top: -40px;
+  position: relative;
+  background-color: #f2f2f2;
+  border-radius: 30px 30px 0 0;
+  width: 100%;
+}
+.menu h2 {
+  font-size: 16px;
+  margin: 10px 10px 0 10px;
+  font-weight: 200;
+}
+.menu__underline {
+  width: 35px;
+  margin: 0 0 20px 10px;
+  border-top: 3px solid #99E2D0;
+}
+.menu__titre {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-top: 20px;
+  width: 100%;
+}
+.menu__titre h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: initial;
+  font-size: 24px;
+  margin: 20px 15px 20px 15px;
+  width: 75%;
+}
+.menu__titre .fav__coeur {
+  width: 10%;
+  text-align: center;
+}
+.menu__titre .fav__coeur .far {
+  font-size: 15px;
+}
+.menu__titre .fav__coeur .fas {
+  color: #9356DC;
+  font-size: 15px;
+  display: none;
+}
+.menu__titre .fav__coeur:hover .far {
+  display: none;
+}
+.menu__titre .fav__coeur:hover .fas {
+  display: initial;
+}
+.menu__content {
+  display: flex;
+  background-color: #fff;
+  width: 90%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 12px #989898;
+  overflow: hidden;
+}
+.menu__content .menu__info {
+  width: 50%;
+  padding: 10px;
+  flex: 1 1;
+}
+.menu__content .menu__info h3 {
+  margin: 0;
+  font-weight: 600;
+}
+.menu__content .menu__info .desc-prix {
+  display: flex;
+  width: 100%;
+}
+.menu__content .menu__info .desc-prix .desc {
+  font-size: 14px;
+  width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__content .menu__info .desc-prix .prix {
+  width: 10%;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+}
+.menu__content:hover .menu__validation {
+  width: 50px;
+}
+.menu__content:hover .menu__validation i {
+  transform: rotate(360deg);
+}
+.menu__validation {
+  display: flex;
+  font-size: 25px;
+  width: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+  background-color: #99E2D0;
+  cursor: pointer;
+  transition: all 600ms ease-in;
+  overflow: hidden;
+}
+.menu__validation i {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  background-color: white;
+  color: #99E2D0;
+  border-radius: 9999px;
+  text-align: center;
+  transition: transform 600ms ease-in-out;
+}
+.menu__pos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.menu .button__command {
+  width: 55%;
+  margin: 10px 0 20px 0;
+  padding: 15px;
+  background-color: #9356DC;
+  border-color: initial;
+  border-style: initial;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 3px 3px 12px #989898;
+  position: relative;
+  z-index: 1;
+}
+.menu .button__command:hover::after {
+  opacity: 1;
+}
+.menu .button__command::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #a16be0;
+  opacity: 0;
+  border-radius: 30px;
+  transition: opacity 250ms;
+}
+.menu__entree {
+  overflow: hidden;
+  flex: 1 1;
+}
+.menu__entree :nth-child(2), .menu__plat :nth-child(2), .menu__dessert :nth-child(2) {
+  animation: anim_menu 800ms both;
+}
+.menu__entree :nth-child(3), .menu__plat :nth-child(3), .menu__dessert :nth-child(3) {
+  animation: anim_menu 800ms 0.3s both;
+}
+.menu__entree :nth-child(4), .menu__plat :nth-child(4), .menu__dessert :nth-child(4) {
+  animation: anim_menu 800ms 0.6s both;
+}
+@keyframes anim_menu {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(0.5, 0, 0, 1);
+  }
+}
+.menu__plat {
+  overflow: hidden;
+  flex: 1 1;
+}
+.menu__dessert {
+  overflow: hidden;
+  flex: 1 1;
+}
+
+.footer {
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.footer h3 {
+  font-family: "Shrikhand", cursive;
+  color: #fff;
+  font-weight: initial;
+  margin: 0 0 15px 0;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 7px;
+}
+.footer a i {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=menu.css.map */

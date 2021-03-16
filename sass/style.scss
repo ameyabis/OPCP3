@@ -1,0 +1,251 @@
+$gris: #f2f2f2;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+@mixin align-center{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    /*flex-direction: column;*/
+    &__logo{
+        @include align-center;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        box-shadow: 3px 3px 12px #989898;
+        img{
+            width: 150px;
+            margin: 10px 0 10px 0;
+        }
+    }
+    &__lieu{
+        width: 100%;
+        background-color: darken($gris, 10%);
+        @include align-center;
+        align-items: center;
+        .lieu__contenu{
+            @include align-center;
+            margin: 17px 0 17px 0;
+            i{
+                color: #000;
+                margin-right: 20px;
+            }
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+    &__info{
+        background-color: $gris;
+        padding: 30px 20px 30px 20px;
+        text-align: center;
+        h1{
+            margin: 0;
+            padding: 0;
+            font-size: 25px;
+        }
+        span{
+            display: block;
+            margin: 15px 0 25px 0;
+        }
+        .info__button{
+            width: 65%;
+            padding: 15px;
+            background-color: $color-primary;
+            border-color: initial;
+            border-style: initial;
+            border-radius: 30px;
+            color: #fff;
+            box-shadow: 3px 3px 12px #989898;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            &:hover{
+                &::after{
+                    opacity: 1;
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: lighten($color-primary, 5);
+                border-radius: 30px;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+            }
+        }
+    }
+}
+
+.fonctionnement{
+    margin: 35px 20px 35px 20px;
+    h2{
+        font-size: 25px;
+    }
+    &__bouton{
+        display: flex;
+        flex-direction: column;
+        .un-bouton{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            .chiffre{
+                position: absolute;
+                @include align-center;
+                align-items: center;
+                background-color: $color-primary;
+                width: 25px;
+                height: 25px;
+                border-radius: 30px;
+                color: #fff;
+                font-size: 14px;
+                margin-left: -10px;
+            }
+            .bouton{
+                display: flex;
+                align-items: center;
+                width: 95%;
+                background-color: $gris;
+                border-radius: 15px;
+                border-color: initial;
+                border-style: initial;
+                /*margin-bottom: 20px;*/
+                padding: 17px 0 17px 0;
+                box-shadow: 3px 3px 12px #989898;
+                i{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 20px 0 20%;
+                    width: 10px;
+                    height: 30px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+            &--rose{
+                .bouton{
+                    background-color: lighten($color-primary, 35%);
+                    i{
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.restaurant{
+    background-color: $gris;
+    padding: 10px;
+    &__global{
+        height: auto;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+        .un__restaurant{
+            width: auto;
+            a{
+                text-decoration: none;
+                color: #000;
+                figure{
+                    position: relative;
+                    margin: 10px 0 10px 0;
+                    width: 300px;
+                    height: 200px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 12px #989898;
+                    img{
+                        object-fit: cover;
+                        width: 300px;
+                        height: 130px;
+                        border-radius: 10px 10px 0px 0px;
+                    }
+                    .un__restaurant--nouveau{
+                        position: absolute;
+                        top: 10px;
+                        left: 220px;
+                        background-color: #9fd7cb;
+                        color: #008766;
+                        font-size: 14px;
+                        padding: 5px 8px 5px 8px;
+                        font-weight: bold;
+                    }
+                    div{
+                        display: flex;
+                        align-items: center;
+                        figcaption{
+                            width: 80%;
+                            margin: 0;
+                            padding: 5px;
+                            h3{
+                                margin: 0 0 5px 0;
+                            }
+                        }
+                        .fav__coeur{
+                            width: 10%;
+                            text-align: center;
+                            .far{
+                                font-size: 30px;
+                            }
+                            .fas{
+                                color: $color-primary;
+                                font-size: 30px;
+                                display: none;
+                            }
+                            &:hover{
+                                .far{
+                                    display: none;
+                                }
+                                .fas{
+                                    display: initial;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    background-color: darken($gris, 75%);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    h3{
+        font-family: 'Shrikhand', cursive;
+        color: #fff;
+        font-weight: initial;
+        margin: 0 0 15px 0;
+    }
+    a{
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 7px;
+        i{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
