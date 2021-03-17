@@ -15,6 +15,67 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.loader{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    animation: loader-container 0s 2s forwards;
+    &__content{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 10;
+        filter: contrast(20);
+        .point{
+            width: 16px;
+            height: 16px;
+            top: 12px;
+            left: 15px;
+            filter: blur(4px);
+            background: #000;
+            border-radius: 50%;
+            transform: translateX(0);
+            animation: dot 2.8s infinite;
+        }
+        .points{
+            transform: translateX(0);
+            animation: dots 2.8s infinite;
+        }
+        span{
+        display: block;
+        float: left;
+        width: 16px;
+        height: 16px;
+        margin-left: 16px;
+        filter: blur(4px);
+        background: #000;
+        border-radius: 50%;
+        }
+    }
+}
+
+@keyframes dot{
+    50%{
+        transform: translateX(96px);
+    }
+}
+@keyframes dots{
+    50%{
+        transform: translateX(-31px);
+    }
+}
+@keyframes loader-container{
+    to{
+        visibility: hidden;
+    }
+}
+
 .header{
     /*flex-direction: column;*/
     &__logo{
@@ -89,6 +150,16 @@ body{
                 transition: opacity 250ms;
             }
         }
+        @media screen and (min-width: 768px){
+            .info__button{
+                width: 50%;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            .info__button{
+                width: 30%;
+            }
+        }
     }
 }
 
@@ -140,13 +211,23 @@ body{
                     font-weight: bold;
                 }
             }
-            &--rose{
+            &:hover{
                 .bouton{
                     background-color: lighten($color-primary, 35%);
                     i{
                         color: $color-primary;
                     }
                 }
+            }
+        }
+    }
+    @media screen and (min-width: 768px){
+        .fonctionnement__bouton{
+            flex-direction: row;
+            justify-content: center;
+            .un-bouton{
+                width: 30%;
+                margin-right: 20px;
             }
         }
     }
@@ -189,10 +270,10 @@ body{
                         padding: 5px 8px 5px 8px;
                         font-weight: bold;
                     }
-                    div{
+                    figcaption{
                         display: flex;
                         align-items: center;
-                        figcaption{
+                        div{
                             width: 80%;
                             margin: 0;
                             padding: 5px;
@@ -223,6 +304,27 @@ body{
                         
                     }
                 }
+            }
+        }
+        @media screen and (min-width: 768px){
+            .un__restaurant{
+                margin: 0 20px 10px 0;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            .un__restaurant{
+                width: 50%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        @media screen and (min-width: 1440px){
+            .un__restaurant{
+                justify-content: initial;
+                flex-direction: row;
+                width: auto;
+                margin-right: 15px;
             }
         }
     }
