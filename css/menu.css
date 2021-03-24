@@ -51,10 +51,13 @@ body {
   border-top: 3px solid #99E2D0;
 }
 .menu__titre {
-  display: flex;
-  align-items: center;
   margin: 0;
   padding-top: 20px;
+  width: 100%;
+}
+.menu__titre--centre {
+  display: flex;
+  align-items: center;
   width: 100%;
 }
 .menu__titre h1 {
@@ -62,10 +65,8 @@ body {
   font-weight: initial;
   font-size: 24px;
   margin: 20px 15px 20px 15px;
-  width: 75%;
 }
 .menu__titre .fav__coeur {
-  width: 10%;
   text-align: center;
 }
 .menu__titre .fav__coeur .far {
@@ -125,7 +126,6 @@ body {
 }
 .menu__validation {
   display: flex;
-  font-size: 25px;
   width: 0;
   align-items: center;
   justify-content: center;
@@ -136,8 +136,6 @@ body {
   overflow: hidden;
 }
 .menu__validation i {
-  height: 25px;
-  width: 25px;
   padding: 5px;
   background-color: white;
   color: #99E2D0;
@@ -159,7 +157,7 @@ body {
   width: 55%;
   margin: 10px 0 20px 0;
   padding: 15px;
-  background-color: #9356DC;
+  background: linear-gradient(#FF79DA, 30%, #9356DC);
   border-color: initial;
   border-style: initial;
   border-radius: 30px;
@@ -180,7 +178,7 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #a16be0;
+  background: linear-gradient(#FF79DA, 70%, #9356DC);
   opacity: 0;
   border-radius: 30px;
   transition: opacity 250ms;
@@ -229,6 +227,18 @@ body {
 @media screen and (min-width: 1024px) {
   .menu .menu__content {
     height: auto;
+  }
+  .menu .menu__titre--centre {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .menu .menu__titre .far {
+    font-size: 25px;
+  }
+  .menu .menu__titre .fas {
+    font-size: 25px;
   }
 }
 

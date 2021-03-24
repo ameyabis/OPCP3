@@ -61,20 +61,21 @@ body{
         border-top: 3px solid $color-tertiary;
     }
     &__titre{
-        display: flex;
-        align-items: center;
         margin: 0;
         padding-top: 20px;
         width: 100%;
+        &--centre{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
         h1{
             font-family: 'Shrikhand', cursive;
             font-weight: initial;
             font-size: 24px;
             margin: 20px 15px 20px 15px;
-            width: 75%;
         }
         .fav__coeur{
-            width: 10%;
             text-align: center;
             .far{
                 font-size: 15px;
@@ -137,7 +138,6 @@ body{
     }
     &__validation{
         display: flex;
-        font-size: 25px;
         width: 0;
         align-items: center;
         justify-content: center;
@@ -147,8 +147,6 @@ body{
         transition: all 600ms ease-in;
         overflow: hidden;
         i{
-            height: 25px;
-            width: 25px;
             padding: 5px;
             background-color: white;
             color: $color-tertiary;
@@ -170,7 +168,7 @@ body{
             width: 55%;
             margin: 10px 0 20px 0;
             padding: 15px;
-            background-color: $color-primary;
+            background: linear-gradient($color-secondary, 30%, $color-primary);
             border-color: initial;
             border-style: initial;
             border-radius: 30px;
@@ -192,7 +190,7 @@ body{
                 right: 0;
                 left: 0;
                 bottom: 0;
-                background-color: lighten($color-primary, 5);
+                background: linear-gradient($color-secondary, 70%, $color-primary);
                 opacity: 0;
                 border-radius: 30px;
                 transition: opacity 250ms;
@@ -245,6 +243,20 @@ body{
     @media screen and (min-width: 1024px){
         .menu__content{
             height: auto;
+        }
+        .menu__titre{
+            &--centre{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+            }
+            .far{
+                font-size: 25px;
+            }
+            .fas{
+                font-size: 25px;
+            }
         }
     }
 }
