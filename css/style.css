@@ -288,7 +288,9 @@ h2, h3 {
   font-size: 30px;
 }
 .restaurant__global .un__restaurant a figure figcaption .fav__coeur .fas {
-  color: #9356DC;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 30px;
   display: none;
 }

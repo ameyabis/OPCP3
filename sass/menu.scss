@@ -81,7 +81,9 @@ body{
                 font-size: 15px;
             }
             .fas{
-                color: $color-primary;
+                background: -webkit-linear-gradient($color-primary, $color-secondary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 font-size: 15px;
                 display: none;
             }
